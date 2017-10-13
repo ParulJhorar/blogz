@@ -1,0 +1,29 @@
+<!DOCTYPE hmtl>
+<html>
+        <style>.error {
+            color: red
+        }
+        </style>
+
+
+        <nav>
+                <a href="/newpost">Add a new blog entry</a> |
+                <a href="/blog">Main blog page</a> 
+                
+        </nav>
+    <head>
+        <title> Build-a-blog</title>
+    </head>
+        <body> 
+        {% with messages = get_flashed_messages(with_categories=true) %}
+             <ul>
+            {% for category,message in messages %}
+                <li><div class="{{ category }}">{{message}}</li></div>
+            {% endfor %}
+            </ul>
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+        
+    </body> 
+</html>    
