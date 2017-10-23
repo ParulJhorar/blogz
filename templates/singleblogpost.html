@@ -3,7 +3,8 @@
 
 
 
-<h1 style="text-align:center;">{{entry.title}}</h1>
-<h2>{{entry.body}}</h2>
+<h1>{{entry.title}}</h1>
+<p class="test">{{entry.body}}</p>
+<h4>written by:<a href="/?id={{owner.id}}">{{owner.username}}</a></h4>
 
 {% endblock%}

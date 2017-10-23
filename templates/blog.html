@@ -1,17 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 style="text-align:center;"><strong>Build a Blog</strong> </h1>
+<h1 style="text-align:center;"><strong>Blogz!!</strong> </h1>
 <table>
     <tbody>
-    
     {% for blog in all_blogs %}
         <h3><a href="/blog?id={{blog.id}}" >{{blog.title}}</a></h3>
         
                
-        <p>{{blog.body}}</p>
+        <p class="test">{{blog.body}}</p>
+        {% for user in all_users %}
+            {% if blog.owner_id==user.id %}
+                <h5> written by:<a href="/?id={{user.id}}" >{{user.username}}</a> </h5>
+            {% endif %}
+        {% endfor %}    
+
                 
     {% endfor%}
+    
     </tbody>   
 </table>  
 

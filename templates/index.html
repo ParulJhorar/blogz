@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 style="text-align:center;"><strong>Authors</strong> </h1>
+<table>
+    <tbody>
+    
+    {% for user in all_users %}
+    <ul>
+        <li>
+        <h3><a href="/?id={{user.id}}" >{{user.username}}</a></h3>
+        </li>
+    </ul>           
+       
+                
+    {% endfor%}
+    </tbody>   
+</table>  
+
+
+
+{% endblock %}
